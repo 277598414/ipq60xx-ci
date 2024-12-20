@@ -1,4 +1,4 @@
-name: IPQ60XX-AX1800PRO-openclash
+name: IPQ60XX-B-openclash
 
 on:
   workflow_dispatch:
@@ -14,7 +14,7 @@ env:
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: IPQ60XX-AX1800PRO-openclash
+  FIRMWARE_TAG: IPQ60XX-B-openclash
   TZ: Asia/Shanghai
 
 jobs:
