@@ -90,6 +90,12 @@ jobs:
         mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
         prefix: ${{ env.OPENWRT_PATH }}
     
+    - name: Install Feeds(安装feeds)
+      run: |
+        cd $OPENWRT_PATH
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+
     - name: Apply patches(安装补丁)   
       run: |
         git config --global user.name "OpenWrt Builder"
@@ -97,12 +103,6 @@ jobs:
         cp $PATCHES_FILE_1 $OPENWRT_PATH/feeds/luci
         cd $OPENWRT_PATH/feeds/luci
         git am 0001-show-soc-status-on-luci.patch
-  
-    - name: Install Feeds(安装feeds)
-      run: |
-        cd $OPENWRT_PATH
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
   
     - name: Load Custom Configuration(加载自定义配置)
       run: |
