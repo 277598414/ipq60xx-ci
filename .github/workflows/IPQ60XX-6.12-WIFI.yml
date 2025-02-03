@@ -101,7 +101,7 @@ jobs:
         mv package/new/custom/speedtest-cli package/new
         rm -rf package/new/custom
         ./scripts/feeds install -a
-
+    
     - name: Apply patches(安装补丁)   
       run: |
         git config --global user.name "OpenWrt Builder"
