@@ -1,4 +1,4 @@
-name: IPQ60XX-24.10(NOWIFI)
+name: ImmortalWrt-IPQ60XX-24.10
 
 on:
   workflow_dispatch:
@@ -6,15 +6,15 @@ on:
     - cron: 0 19 * * *
 
 env:
-  REPO_URL: https://github.com/LiBwrt/openwrt-6.x.git
+  REPO_URL: https://github.com/277598414/immortalwrt.git
   REPO_BRANCH: openwrt-24.10
-  CONFIG_FILE: configs/ipq60xx-nowifi.config
+  CONFIG_FILE: configs/jingjian.config
   DIY_SCRIPT: diy-script.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: IPQ60XX-24.10(NOWIFI)
+  FIRMWARE_TAG: ImmortalWrt-IPQ60XX-24.10
   TZ: Asia/Shanghai
 
 jobs:
@@ -158,9 +158,9 @@ jobs:
         artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
           **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
-          ### 📒 版本24.10固件(NOWIFI)
-          - 这是NOWIFI，带NSS的6.6内核固件
-          - 💻 这是 ${{ env.FIRMWARE_TAG }} 平台使用的 OpenWrt 固件
+          ### 📒 固件信息
+          - 这是官方稳定版带WIFI的固件
+          - 💻 这是 ${{ env.FIRMWARE_TAG }} 平台使用的ImmortalWrt固件
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
           - 🌐 默认地址: 192.168.1.1
