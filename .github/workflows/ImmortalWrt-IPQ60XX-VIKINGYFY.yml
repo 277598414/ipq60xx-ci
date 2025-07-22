@@ -3,7 +3,7 @@ name: ImmortalWrt-IPQ60XX-VIKINGYFY
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 19 * * *
+    - cron: 0 22 * * *
 
 env:
   REPO_URL: https://github.com/VIKINGYFY/immortalwrt.git
